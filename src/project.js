@@ -1,4 +1,4 @@
-const project = (title, description, priority) => {
+export default function(title, description, priority) {
   let state = {
     title,
     description,
@@ -6,6 +6,6 @@ const project = (title, description, priority) => {
   }
   return Object.assign(
     {},
-    
+    { state }
   )
 }

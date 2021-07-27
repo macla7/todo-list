@@ -6,8 +6,21 @@
   </head>
   <body>
     <h1>To-Dooly</h1>
-    <section id='newProject'>
-      <button> + Project</button>
+    <section>
+      <button id='new-project'> + Project</button>
+      <section id='project-form'>
+        <form>
+          <label for='title'>Title:</label>
+          <input type='text' name='title'>
+          <label for='description'>Description:</label>
+          <input type='text' name='description'>
+          <label for='priority'>Priority:</label>
+          <div>
+            <input type='range' name='priority' min='1' max='4' id='priority'>
+            <p id='priority-text'></p>
+          </div>
+        </form>
+      </section>
     </section>
     <main>
       <section class='project' id='default-project'>
