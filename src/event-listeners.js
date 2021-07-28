@@ -1,8 +1,5 @@
 export default function(user) {
 
-  console.log('hello')
-  console.log(user)
-
   const newProject = document.getElementById('new-project')
   const range = document.getElementById('priority')
   const priorityDiv = document.getElementById('priority-div')
@@ -35,9 +32,10 @@ export default function(user) {
   newProject.addEventListener('click', (e) =>{
     
   })
-
-  range.addEventListener('click', (e) => {
+  
+  function rangeChange() {
     const rangeValue = document.getElementById('priority').value;
+    console.log(rangeValue)
     priorityDiv.classList = ''
     switch(rangeValue) {
       case '1':
@@ -57,8 +55,10 @@ export default function(user) {
         priorityText.innerHTML = 'Urgent Priority'
         break;
     }
+  }
 
-  })
+  range.addEventListener('touchend', rangeChange)
+  range.addEventListener('click', rangeChange);
 
 
 

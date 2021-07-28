@@ -1,0 +1,29 @@
+body {
+  background-color: rgb(0, 33, 22);
+  color: white;
+  font-family: 'OpenSansLight';
+
+  h1 {
+    font-family: 'OpenSansReg';
+    padding: 1rem;
+    background-color: rgba(1, 82, 55, 0.454);
+    border-radius: 2rem;
+  }
+
+  header {
+    margin-left: 1rem;
+    display: flex;
+  }
+}
+
+main {
+
+  > * {
+    background-color: rgba(70, 70, 70, 0.5);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin: 10px;
+    font-weight: 100;
+  }
+}
+

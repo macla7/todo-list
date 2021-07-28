@@ -5,7 +5,9 @@
     <title>Todo Dev</title>
   </head>
   <body>
-    <h1>To-Dooly</h1>
+    <header>
+      <h1>To-Dooly</h1>
+    </header>
     <section>
       <button id='new-project'> + Project</button>
       <section class='project-form-cont'>
@@ -20,9 +22,9 @@
           </div>
           <div class='form-item-cont'>
             <label for='priority'>Priority:</label>
-            <div id='priority-div'>
+            <div id='priority-div' class='high-priority'>
               <input type='range' name='priority' min='1' max='4' id='priority'>
-              <p id='priority-text'></p>
+              <p id='priority-text' >High Priority</p>
             </div>
           </div>
           <div>
