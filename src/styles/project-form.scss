@@ -1,0 +1,76 @@
+#project-form {
+  display: grid;
+  color: rgb(255, 255, 255);
+
+  .form-item-cont {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0.2rem;
+    
+  }
+
+  .form-item-cont .medium-priority {
+    color: rgb(0, 255, 50);
+  }
+
+  .form-item-cont .high-priority {
+    color: rgb(228, 255, 50);
+  }
+
+  .form-item-cont .urgent-priority {
+    color: rgb(255, 77, 0);
+    font-weight: bold;
+    ;
+  }
+
+  #priority {
+    padding: 0.3rem;
+  }
+
+}
+
+.project-form-cont {
+  display: none;
+}
+
+.show-form {
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  grid-template-rows: 1fr auto 1fr;
+  grid-template-areas: 
+    ". . ."
+    ". form ."
+    ". . ."
+  ;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-color: rgba(128, 128, 128, 0.5);
+}
+
+#project-form {
+  background-color: rgb(36, 36, 36);
+  padding: 1.5rem;
+  grid-area: form;
+  border-radius: 0.4rem;
+
+  > * {
+    padding: 0.5rem;
+    margin: 0 0.5rem;
+  }
+
+  #form-controls {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .form-item {
+    display: grid;
+    grid-gap: 0.3rem;
+    grid-template-columns: 1fr 2fr;
+  }
+
+}
+

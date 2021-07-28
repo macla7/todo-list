@@ -8,16 +8,26 @@
     <h1>To-Dooly</h1>
     <section>
       <button id='new-project'> + Project</button>
-      <section id='project-form'>
-        <form>
-          <label for='title'>Title:</label>
-          <input type='text' name='title'>
-          <label for='description'>Description:</label>
-          <input type='text' name='description'>
-          <label for='priority'>Priority:</label>
+      <section class='project-form-cont'>
+        <form id='project-form'>
+          <div class='form-item-cont'>
+            <label for='title'>Title:</label>
+            <input type='text' name='title'>
+          </div>
+          <div class='form-item-cont'>
+            <label for='description'>Description:</label>
+            <input type='text' name='description'>
+          </div>
+          <div class='form-item-cont'>
+            <label for='priority'>Priority:</label>
+            <div id='priority-div'>
+              <input type='range' name='priority' min='1' max='4' id='priority'>
+              <p id='priority-text'></p>
+            </div>
+          </div>
           <div>
-            <input type='range' name='priority' min='1' max='4' id='priority'>
-            <p id='priority-text'></p>
+            <input type='submit' value='Add' id='submit'>
+            <button type='button' id='close'>Close</button>
           </div>
         </form>
       </section>
