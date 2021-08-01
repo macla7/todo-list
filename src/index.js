@@ -1,5 +1,7 @@
 import User from './user';
 import Project from './project';
+import ProjectFormEvents from './project-form-EL';
+import ProjectRangeEvents from './project-range-EL';
 import Events from './event-listeners'
 import './style.scss'
 
@@ -10,4 +12,6 @@ user.newProject(example);
 user.printProject()
 
 
-Events(user);
+ProjectFormEvents();
+ProjectRangeEvents();
+Events(user, Project);

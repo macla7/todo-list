@@ -11,9 +11,32 @@ export default function() {
     console.log(state.projects);
   }
 
+  const domPrinter = (title, description) => {
+    const main = document.getElementsByTagName('main')[0];
+
+    const proSec = document.createElement('section');
+    const proSecTit = document.createElement('section');
+    const proTit = document.createElement('h2');
+    const proDesCont = document.createElement('div');
+    const proDes = document.createElement('p');
+    const todSec = document.createElement('section');
+    const todList = document.createElement('ul')
+
+    proSec.classList.add('project');
+    proSecTit.classList.add('project-title-area');
+    proTit.classList.add('project-title');
+    proDesCont.classList.add('project-des');
+    todSec.classList.add('project-todos');
+    todList.classList.add('todos');
+  }
+
+  const _DomPrintLooper = () => {
+
+  }
+
   return Object.assign(
     {},
-    { state, newProject, printProject },
+    { state, newProject, printProject, domPrinter },
     
   )
 };
