@@ -9,7 +9,7 @@
       <h1>To-Dooly</h1>
     </header>
     <section>
-      <button id='new-project'> + Project</button>
+      <button id='new-project'><span>Add Project</span></button>
       <section class='project-form-cont'>
         <form id='project-form'>
           <div class='form-item-cont'>
@@ -34,21 +34,9 @@
         </form>
       </section>
     </section>
+    <p ondblclick="this.contentEditable=true;this.className='inEdit';" onblur="this.contentEditable=false;this.className='';" contenteditable="false" class="">This paragraph uses some simple script to be editable. Double-click the text to begin editing.</p>
     <main>
-      <section class='project' id='default-project'>
-        <section class='project-title-area'>
-          <h2 class='project-title'>Example Project</h2>
-          <div class='project-des'>
-            <p>Daily Fitness</p>
-          </div>
-        </section>
-        <section class='project-todos'>
-          <ul class='todos'>
-            <li>Walk dog</li>
-            <li>Go for a swim</li>
-          </ul>
-        </section>
-      </section>
+
     </main>
   </body>
 </html>

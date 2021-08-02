@@ -1,0 +1,42 @@
+#new-project {
+  border-radius: 0.4rem;
+  background-color: #f4511e;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 1rem;
+  padding: 0.3rem 0.5rem;
+  width: 10rem;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 0.2rem;
+}
+
+#new-project span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+#new-project span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+#new-project:hover span {
+  padding-right: 25px;
+}
+
+#new-project:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.sec-btns {
+  margin: 0 0.2rem;
+}
