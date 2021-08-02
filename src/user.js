@@ -11,7 +11,7 @@ export default function() {
     console.log(state.projects);
   }
 
-  const domPrinter = (title, description) => {
+  const _domCreator = (title, description) => {
     const main = document.getElementsByTagName('main')[0];
 
     const proSec = document.createElement('section');
@@ -28,10 +28,27 @@ export default function() {
     proDesCont.classList.add('project-des');
     todSec.classList.add('project-todos');
     todList.classList.add('todos');
+
+    main.appendChild(proSec);
+    proSec.appendChild(proSecTit);
+    proSecTit.appendChild(proTit);
+    proSecTit.appendChild(proDesCont);
+    proDesCont.appendChild(proDes);
+    proSec.appendChild(todSec);
+    todSec.appendChild(todList);
+
+    proDes.innerHTML = description;
+    proTit.innerHTML = title;
   }
 
-  const _DomPrintLooper = () => {
-
+  const domPrinter = () => {
+    const main = document.getElementsByTagName('main')[0];
+    main.innerHTML = '';
+    let project;
+    for (let ii = 0; ii < state['projects'].length; ii++) {
+      project = state['projects'][ii]['state']
+      _domCreator(project['title'], project['description']);
+    }
   }
 
   return Object.assign(
