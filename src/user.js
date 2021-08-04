@@ -11,6 +11,7 @@ export default function() {
     console.log(state.projects);
   }
 
+  // Creates Projects in the DOM
   const _domCreator = (title, description) => {
     const main = document.getElementsByTagName('main')[0];
 
@@ -44,11 +45,9 @@ export default function() {
     todSec.appendChild(todList);
 
     proTit.innerHTML = title;
-    proTit.contentEditable = 'true';
     proDes.innerHTML = description;
-    proDes.contentEditable = 'true';
     proDesEdiBtn.innerHTML = '&#9998;';
-    proDesHidBtn.innerHTML = '+';
+    proDesHidBtn.innerHTML = '⇩';
   }
 
   const domPrinter = () => {
