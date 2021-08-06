@@ -2,7 +2,8 @@ export default function(title, description, priority) {
   let state = {
     title,
     description,
-    priority
+    priority,
+    todos: []
   }
   return Object.assign(
     {},

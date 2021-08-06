@@ -10,8 +10,8 @@
     </header>
     <section>
       <button id='new-project'><span>Add Project</span></button>
-      <section class='project-form-cont'>
-        <form id='project-form'>
+      <section class='form-cont' id='project-form-cont'>
+        <form class='form' id='project-form'>
           <div class='form-item-cont'>
             <label for='title'>Title:</label>
             <input type='text' name='title' id='project-title'>
@@ -22,9 +22,9 @@
           </div>
           <div class='form-item-cont'>
             <label for='priority'>Priority:</label>
-            <div id='priority-div' class='high-priority'>
-              <input type='range' name='priority' min='1' max='4' id='priority'>
-              <p id='priority-text' >High Priority</p>
+            <div class='priority-div high-priority'>
+              <input type='range' name='priority' min='1' max='4' class='priority' id='project-priority'>
+              <p class='priority-text'>High Priority</p>
             </div>
           </div>
           <div>
@@ -33,8 +33,24 @@
           </div>
         </form>
       </section>
+      <section class='form-cont' id='todo-form-cont'>
+        <form class='form' id='todo-form'>
+          <label for='title'>Title:</label>
+          <input type='textarea' name='title'>
+          <label for='description'>Description:</label>
+          <input type='textarea' for='description'>
+          <label for='due-date'>Due Date:</label>
+          <input type='datetime-local' name='due-date'>
+          <div class='form-item-cont'>
+            <label for='priority'>Priority:</label>
+            <div class='priority-div high-priority'>
+              <input type='range' name='priority' min='1' max='4' class='priority'>
+              <p class='priority-text'>High Priority</p>
+            </div>
+          </div>
+        </form>
+      </section>
     </section>
-    <p ondblclick="this.contentEditable=true;this.className='inEdit';" onblur="this.contentEditable=false;this.className='';" contenteditable="false" class="">This paragraph uses some simple script to be editable. Double-click the text to begin editing.</p>
     <main>
 
     </main>

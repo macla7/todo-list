@@ -1,4 +1,4 @@
-const todoItem = (title, description, dueDate, priority) => {
+export default function(title, description, dueDate, priority) {
   let state = {
     title,
     description,
@@ -8,6 +8,6 @@ const todoItem = (title, description, dueDate, priority) => {
   }
   return Object.assign(
     {},
-    
+    state
   )
 }

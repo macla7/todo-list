@@ -24,6 +24,11 @@ export default function() {
     const proDes = document.createElement('p');
     const todSec = document.createElement('section');
     const todList = document.createElement('ul')
+    const todAddBtn = document.createElement('button')
+
+    // const todFormCont = document.createElement('section')
+    // const todForm = document.createElement('form')
+    
 
     proSec.classList.add('project');
     proSecTit.classList.add('project-title-area');
@@ -33,6 +38,7 @@ export default function() {
     proDesCont.classList.add('project-des');
     todSec.classList.add('project-todos');
     todList.classList.add('todos');
+    todAddBtn.classList.add('todo-add-btn')
 
     main.appendChild(proSec);
     proSec.appendChild(proSecTit);
@@ -43,11 +49,13 @@ export default function() {
     proDesCont.appendChild(proDes);
     proSec.appendChild(todSec);
     todSec.appendChild(todList);
+    todSec.appendChild(todAddBtn);
 
     proTit.innerHTML = title;
     proDes.innerHTML = description;
     proDesEdiBtn.innerHTML = '&#9998;';
     proDesHidBtn.innerHTML = '⇩';
+    todAddBtn.innerHTML = 'Add Task'
   }
 
   const domPrinter = () => {
