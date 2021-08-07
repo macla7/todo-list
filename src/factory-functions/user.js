@@ -1,4 +1,4 @@
-export default function() {
+export default function(todoDomBuilder) {
   let state = {
     projects: []
   }
@@ -12,7 +12,7 @@ export default function() {
   }
 
   // Creates Projects in the DOM
-  const _domCreator = (title, description) => {
+  const _domCreator = (title, description, ii) => {
     const main = document.getElementsByTagName('main')[0];
 
     const proSec = document.createElement('section');
@@ -37,7 +37,7 @@ export default function() {
     proDesHidBtn.classList.add('hide-button', 'sec-btns')
     proDesCont.classList.add('project-des');
     todSec.classList.add('project-todos');
-    todList.classList.add('todos');
+    todList.setAttribute('id', `todos-${ii}`);
     todAddBtn.classList.add('todo-add-btn')
 
     main.appendChild(proSec);
@@ -64,14 +64,14 @@ export default function() {
     let project;
     for (let ii = 0; ii < state['projects'].length; ii++) {
       project = state['projects'][ii]['state']
-      _domCreator(project['title'], project['description']);
+      _domCreator(project['title'], project['description'], ii);
+      todoDomBuilder({state}, ii);
     }
   }
 
   return Object.assign(
     {},
     { state, newProject, printProject, domPrinter },
-    
   )
 };
 

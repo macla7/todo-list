@@ -2,8 +2,13 @@ export default function() {
   let todoFormCont = document.getElementById('todo-form-cont');
   let formClose = document.getElementById('close');
 
-  const bringUpForm = () => {
-    todoFormCont.classList.toggle('show-form')
+  const bringUpForm = (i = '') => {
+    if (todoFormCont.classList[2]) {
+      todoFormCont.classList = ''
+      todoFormCont.classList.add('form-cont')
+    } else {
+      todoFormCont.classList.add('show-form',`${i}`)
+    }
   }
 
   formClose.addEventListener('click', (e)=> {
@@ -13,7 +18,6 @@ export default function() {
   todoFormCont.addEventListener('click', (e)=> {
     if (!document.getElementById('todo-form').contains(e.target)) {
       bringUpForm();
-      console.log('hel')
     }
   });
 }

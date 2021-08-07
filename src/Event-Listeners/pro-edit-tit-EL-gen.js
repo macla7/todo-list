@@ -1,6 +1,5 @@
 export default function(user, ediProTitS) {
   if (ediProTitS != undefined) {
-    console.log(ediProTitS);
     ediProTitS.forEach((btn, i) => {
       let title = btn.parentElement.firstChild;
 
@@ -10,7 +9,6 @@ export default function(user, ediProTitS) {
       })
 
       btn.addEventListener('click', (e) => {
-        console.log('hello')
         // Not allow enter to cause a <br >
         title.contentEditable = 'true'
         title.addEventListener('keydown', (evt) => {

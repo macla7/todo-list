@@ -5,8 +5,13 @@ export default function(title, description, priority) {
     priority,
     todos: []
   }
+
+  const newTodo = p => {
+    state.todos.push(p);
+  }
+
   return Object.assign(
     {},
-    { state }
+    { state, newTodo }
   )
 }
