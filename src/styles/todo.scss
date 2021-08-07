@@ -1,0 +1,12 @@
+.todo-tit-cont {
+  display: flex;
+  flex-wrap: wrap;
+  color: red;
+  justify-content: space-between;
+}
+
+.todo-actions {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}

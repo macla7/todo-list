@@ -3,6 +3,7 @@ export default function(user, project, editProTitELGen, showProDesELGen, todoEL)
   let ediProTitS = document.querySelectorAll('.edit-button')
   let hidProDesS = document.querySelectorAll('.hide-button')
   let addTodoBtns = document.querySelectorAll('.todo-add-btn')
+  const priorityText = document.querySelectorAll('.priority-text')
 
   // New project
   form.addEventListener('submit', (e) => {
@@ -23,6 +24,9 @@ export default function(user, project, editProTitELGen, showProDesELGen, todoEL)
     editProTitELGen(user, ediProTitS);
     showProDesELGen(user, hidProDesS);
     todoEL(user, addTodoBtns);
+
+    priorityText[0].innerHTML = ''
+    form.reset();
   })
 
   editProTitELGen(user, ediProTitS);

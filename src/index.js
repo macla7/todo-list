@@ -14,9 +14,11 @@ import './style.scss';
 
 
 const user = User(todoDomBuilder);
-const example = Project('Example Project', 'My reoccurring goal to get in a healthy amount of body movement and exertion.', 1)
+const examplePro = Project('Example Project', 'My reoccurring goal to get in a healthy amount of body movement and exertion.', 1)
+const exampleTodo = Todo('Walk Dog', 'Make sure to take the tennis ball and leash', '', 3)
 
-user.newProject(example);
+examplePro.newTodo(exampleTodo);
+user.newProject(examplePro);
 user.printProject();
 user.domPrinter();
 
