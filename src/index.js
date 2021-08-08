@@ -9,13 +9,15 @@ import NewTodo from './Event-Listeners/new-todo-EL';
 import TodoProELGen from './Event-Listeners/pro-todo-EL-gen';
 import EditProTitELGen from './Event-Listeners/pro-edit-tit-EL-gen';
 import ShowProDesELGen from './Event-Listeners/pro-show-des-EL-gen';
-import todoDomBuilder from './todo-dom-builder';
+import TodoDelELGen from './Event-Listeners/todo-del-EL-gen';
+import ProjectDomBuilder from './dom-builders/project-dom-builder'
+import TodoDomBuilder from './dom-builders/todo-dom-builder';
 import './style.scss';
 
 
-const user = User(todoDomBuilder);
+const user = User(TodoDomBuilder, ProjectDomBuilder);
 const examplePro = Project('Example Project', 'My reoccurring goal to get in a healthy amount of body movement and exertion.', 1)
-const exampleTodo = Todo('Walk Dog', 'Make sure to take the tennis ball and leash', '', 3)
+const exampleTodo = Todo('Walk Dog', 'Make sure to take the tennis ball and leash', '', 3, 0)
 
 examplePro.newTodo(exampleTodo);
 user.newProject(examplePro);
@@ -26,6 +28,6 @@ ProjectFormEvents();
 TodoFormEvents();
 FormRangeEvents();
 NewProject(user, Project, EditProTitELGen, ShowProDesELGen, TodoProELGen);
-NewTodo(user, Todo, todoDomBuilder);
+NewTodo(user, Todo, TodoDomBuilder, TodoDelELGen);
 
 

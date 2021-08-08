@@ -1,6 +1,5 @@
 export default function(user, projectNo) {
   let ul = document.getElementById(`todos-${projectNo}`)
-  console.log(user.state)
   let project = user.state['projects'][projectNo]
 
   ul.innerHTML = '';
@@ -13,16 +12,21 @@ export default function(user, projectNo) {
     const compForm = document.createElement('form')
     const compInput = document.createElement('input')
     const priorityFlag = document.createElement('p')
+    const deleteBtn = document.createElement('button')
     const todoDes = document.createElement('p')
 
     compInput.setAttribute('type', 'checkbox')
     compInput.setAttribute('value', 'completed')
     todoTitCont.classList.add('todo-tit-cont')
     todoActions.classList.add('todo-actions')
+    compForm.classList.add('todo-btns')
+    priorityFlag.classList.add('todo-btns')
+    deleteBtn.classList.add('todo-btns', 'todo-del', `${todo['marker']}`);
 
     todoTit.innerHTML = todo['title'];
     todoDes.innerHTML = todo['description'];
-    priorityFlag.innerHTML = `${todo['priority']} ⚑`
+    priorityFlag.innerHTML = `${todo['priority']}⚑`
+    deleteBtn.innerHTML = '🗑'
 
     ul.appendChild(todoLi);
     todoLi.appendChild(todoTitCont);
@@ -31,6 +35,7 @@ export default function(user, projectNo) {
     todoActions.appendChild(compForm);
     compForm.appendChild(compInput);
     todoActions.appendChild(priorityFlag);
+    todoActions.appendChild(deleteBtn);
     todoLi.appendChild(todoDes);
     
   })

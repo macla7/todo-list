@@ -1,12 +1,18 @@
 .todo-tit-cont {
   display: flex;
   flex-wrap: wrap;
-  color: red;
   justify-content: space-between;
-}
 
-.todo-actions {
-  display: flex;
-  justify-content: start;
-  align-items: center;
+  > * {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  h3 {
+    padding-right: 3rem;
+  }
+
 }

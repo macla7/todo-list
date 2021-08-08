@@ -9,7 +9,6 @@ export default function(user, addTodoBtns) {
     } else {
       todoFormCont.classList.add('show-form',`${i}`)
     }
-    console.log(todoFormCont.classList)
   }
 
   if ( addTodoBtns != undefined ) {
