@@ -1,10 +1,12 @@
 export default function(todoDomBuilder, projectDomBuilder) {
   let state = {
-    projects: []
+    projects: [],
+    projectMarker: 0
   }
 
   const newProject = p => {
     state.projects.push(p);
+    state.projectMarker++;
   }
 
   const printProject = () => {

@@ -15,7 +15,7 @@ export default function(title, description, ii) {
   // const todFormCont = document.createElement('section')
   // const todForm = document.createElement('form')
   
-  proSec.classList.add('project');
+  proSec.classList.add('project', `pro-${ii}`);
   proSecTit.classList.add('project-title-area');
   proTit.classList.add('project-title');
   proDesEdiBtn.classList.add('edit-button', 'project-btns');

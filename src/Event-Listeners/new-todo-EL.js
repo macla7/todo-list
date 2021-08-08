@@ -1,7 +1,7 @@
 export default function(user, todo, todoDomBuilder, todoDelBtnGen) {
   const form = document.getElementById('todo-form')
   const priorityText = document.querySelectorAll('.priority-text')
-  let todoDelBtnS = document.querySelectorAll('.todo-del');
+  let ulTodoDelBtnS = document.querySelectorAll('.todo-del');
 
   form.addEventListener('submit', (e)=> {
     e.preventDefault();
@@ -19,13 +19,16 @@ export default function(user, todo, todoDomBuilder, todoDelBtnGen) {
     
     todoDomBuilder(user, projectNo);
 
-    todoDelBtnS = document.querySelectorAll('.todo-del');
+    console.log('projectNo')
+    console.log(projectNo)
+
+    ulTodoDelBtnS = document.getElementById(`todos-${projectNo}`).querySelectorAll('.todo-del')
     
-    todoDelBtnGen(user, todoDelBtnS, projectNo, todoDomBuilder);
+    todoDelBtnGen(user, todoDomBuilder, ulTodoDelBtnS);
 
     priorityText[1].innerHTML = ''
     form.reset();
   })
 
-  todoDelBtnGen(user, todoDelBtnS, 0, todoDomBuilder);
+  todoDelBtnGen(user, todoDomBuilder, ulTodoDelBtnS);
 }
