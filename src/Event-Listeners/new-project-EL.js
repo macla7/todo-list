@@ -1,4 +1,4 @@
-export default function(user, project, editProTitELGen, showProDesELGen, todoEL, todoDomBuilder, todoDelELGen) {
+export default function(user, project, editProTitELGen, showProDesELGen, todoEL, todoDomBuilder, todoDelELGen, Save) {
   const form = document.getElementById('project-form')
   let ediProTitS = document.querySelectorAll('.edit-button')
   let hidProDesS = document.querySelectorAll('.hide-button')
@@ -14,7 +14,7 @@ export default function(user, project, editProTitELGen, showProDesELGen, todoEL,
     let description = document.getElementById('project-description').value
 
     user.newProject(project(title, description, user.state['projectMarker']))
-    user.printProject();
+    // user.printProject();
     user.domPrinter();
 
     ediProTitS = document.querySelectorAll('.edit-button');
@@ -28,7 +28,9 @@ export default function(user, project, editProTitELGen, showProDesELGen, todoEL,
     todoDelELGen(user, todoDomBuilder, todoDelBtnS);
 
     form.reset();
-    console.log(user.state['projects'])
+
+    Save(user);
+
   })
 
   editProTitELGen(user, ediProTitS);

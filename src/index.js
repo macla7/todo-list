@@ -12,7 +12,11 @@ import ShowProDesELGen from './Event-Listeners/pro-show-des-EL-gen';
 import TodoDelELGen from './Event-Listeners/todo-del-EL-gen';
 import ProjectDomBuilder from './dom-builders/project-dom-builder'
 import TodoDomBuilder from './dom-builders/todo-dom-builder';
+import Save from './local-saving/save';
 import './style.scss';
+
+console.log(localStorage)
+
 
 
 const user = User(TodoDomBuilder, ProjectDomBuilder);
@@ -21,13 +25,12 @@ const exampleTodo = Todo('Walk Dog', 'Make sure to take the tennis ball and leas
 
 examplePro.newTodo(exampleTodo);
 user.newProject(examplePro);
-user.printProject();
 user.domPrinter();
 
 ProjectFormEvents();
 TodoFormEvents();
 FormRangeEvents();
-NewProject(user, Project, EditProTitELGen, ShowProDesELGen, TodoProELGen,  TodoDomBuilder, TodoDelELGen);
-NewTodo(user, Todo, TodoDomBuilder, TodoDelELGen, ShowProDesELGen);
+NewProject(user, Project, EditProTitELGen, ShowProDesELGen, TodoProELGen,  TodoDomBuilder, TodoDelELGen, Save);
+NewTodo(user, Todo, TodoDomBuilder, TodoDelELGen, ShowProDesELGen, Save);
 
 
