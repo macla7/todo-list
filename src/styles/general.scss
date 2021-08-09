@@ -23,10 +23,6 @@ body {
 
   li {
     list-style: none;
-
-    p {
-      padding-left: 0.5rem;
-    }
   }
 
   ul {
@@ -43,5 +39,9 @@ main {
     margin: 10px;
     font-weight: 100;
   }
+}
+
+.des {
+  padding-left: 0.5rem;
 }
 

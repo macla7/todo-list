@@ -16,7 +16,7 @@ import './style.scss';
 
 
 const user = User(TodoDomBuilder, ProjectDomBuilder);
-const examplePro = Project('Example Project', 'My reoccurring goal to get in a healthy amount of body movement and exertion.', 1, 0)
+const examplePro = Project('Example Project', 'My reoccurring goal to get in a healthy amount of body movement and exertion.', 0)
 const exampleTodo = Todo('Walk Dog', 'Make sure to take the tennis ball and leash', '', 3, 0)
 
 examplePro.newTodo(exampleTodo);
@@ -28,6 +28,6 @@ ProjectFormEvents();
 TodoFormEvents();
 FormRangeEvents();
 NewProject(user, Project, EditProTitELGen, ShowProDesELGen, TodoProELGen,  TodoDomBuilder, TodoDelELGen);
-NewTodo(user, Todo, TodoDomBuilder, TodoDelELGen);
+NewTodo(user, Todo, TodoDomBuilder, TodoDelELGen, ShowProDesELGen);
 
 

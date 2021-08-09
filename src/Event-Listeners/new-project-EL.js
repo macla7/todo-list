@@ -12,9 +12,8 @@ export default function(user, project, editProTitELGen, showProDesELGen, todoEL,
 
     let title = document.getElementById('project-title').value
     let description = document.getElementById('project-description').value
-    let priority = document.getElementById('project-priority').value
 
-    user.newProject(project(title, description, priority, user.state['projectMarker']))
+    user.newProject(project(title, description, user.state['projectMarker']))
     user.printProject();
     user.domPrinter();
 
@@ -28,7 +27,6 @@ export default function(user, project, editProTitELGen, showProDesELGen, todoEL,
     todoEL(user, addTodoBtnS);
     todoDelELGen(user, todoDomBuilder, todoDelBtnS);
 
-    priorityText[0].innerHTML = ''
     form.reset();
     console.log(user.state['projects'])
   })

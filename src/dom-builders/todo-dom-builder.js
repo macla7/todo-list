@@ -19,11 +19,12 @@ export default function(user, projectNo) {
     compInput.setAttribute('type', 'checkbox')
     compInput.setAttribute('value', 'completed')
     todoTitCont.classList.add('todo-tit-cont')
-    todoDesHid.classList.add('todo-btns')
+    todoDesHid.classList.add('todo-btns', 'todo-hide-btn')
     todoActions.classList.add('todo-actions')
     compForm.classList.add('todo-btns')
     priorityFlag.classList.add('todo-btns')
     deleteBtn.classList.add('todo-btns', 'todo-del', `${todo['marker']}`);
+    todoDes.classList.add('des');
 
     todoDesHid.innerHTML = '⇩';
     todoTit.innerHTML = todo['title'];

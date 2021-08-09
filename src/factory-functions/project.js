@@ -1,8 +1,7 @@
-export default function(title, description, priority, projectMarker) {
+export default function(title, description, projectMarker) {
   let state = {
     title,
     description,
-    priority,
     projectMarker,
     todoMarker: 0,
     todos: []

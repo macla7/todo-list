@@ -20,7 +20,7 @@ export default function(title, description, ii) {
   proDesHidBtn.classList.add('hide-button', 'project-btns')
   proTit.classList.add('project-title');
   proDesEdiBtn.classList.add('edit-button', 'project-btns');
-  proDesCont.classList.add('project-des');
+  proDesCont.classList.add('des');
   todSec.classList.add('project-todos');
   todList.setAttribute('id', `todos-${ii}`);
   todAddBtn.classList.add('todo-add-btn')
