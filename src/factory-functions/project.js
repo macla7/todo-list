@@ -1,9 +1,9 @@
-export default function(title, description, projectMarker) {
+export default function(title, description, projectMarker, todoMarker = 0) {
   let state = {
     title,
     description,
     projectMarker,
-    todoMarker: 0,
+    todoMarker,
     todos: []
   }
 

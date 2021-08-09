@@ -3,7 +3,6 @@ export default function(user, project, editProTitELGen, showProDesELGen, todoEL,
   let ediProTitS = document.querySelectorAll('.edit-button')
   let hidProDesS = document.querySelectorAll('.hide-button')
   let addTodoBtnS = document.querySelectorAll('.todo-add-btn')
-  const priorityText = document.querySelectorAll('.priority-text')
   let todoDelBtnS = document.querySelectorAll('.todo-del')
 
   // New project
@@ -22,10 +21,10 @@ export default function(user, project, editProTitELGen, showProDesELGen, todoEL,
     addTodoBtnS = document.querySelectorAll('.todo-add-btn');
     todoDelBtnS = document.querySelectorAll('.todo-del');
 
-    editProTitELGen(user, ediProTitS);
+    editProTitELGen(user, ediProTitS, Save);
     showProDesELGen(user, hidProDesS);
     todoEL(user, addTodoBtnS);
-    todoDelELGen(user, todoDomBuilder, todoDelBtnS);
+    todoDelELGen(user, todoDomBuilder, todoDelBtnS, Save);
 
     form.reset();
 
@@ -33,7 +32,7 @@ export default function(user, project, editProTitELGen, showProDesELGen, todoEL,
 
   })
 
-  editProTitELGen(user, ediProTitS);
+  editProTitELGen(user, ediProTitS, Save);
   showProDesELGen(user, hidProDesS);
   todoEL(user, addTodoBtnS);
 }

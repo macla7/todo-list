@@ -1,4 +1,4 @@
-export default function(user, ediProTitS) {
+export default function(user, ediProTitS, Save) {
   if (ediProTitS != undefined) {
     ediProTitS.forEach((btn, i) => {
       let title = btn.parentElement.children[1];
@@ -6,6 +6,7 @@ export default function(user, ediProTitS) {
       title.addEventListener('focusout', (e) => {
         title.contentEditable = 'false'
         user.state['projects'][i].state['title'] = title.innerHTML
+        Save(user);
       })
 
       btn.addEventListener('click', (e) => {

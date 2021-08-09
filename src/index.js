@@ -13,18 +13,21 @@ import TodoDelELGen from './Event-Listeners/todo-del-EL-gen';
 import ProjectDomBuilder from './dom-builders/project-dom-builder'
 import TodoDomBuilder from './dom-builders/todo-dom-builder';
 import Save from './local-saving/save';
+import Loader from './local-saving/load';
 import './style.scss';
 
-console.log(localStorage)
-
-
-
 const user = User(TodoDomBuilder, ProjectDomBuilder);
-const examplePro = Project('Example Project', 'My reoccurring goal to get in a healthy amount of body movement and exertion.', 0)
-const exampleTodo = Todo('Walk Dog', 'Make sure to take the tennis ball and leash', '', 3, 0)
 
-examplePro.newTodo(exampleTodo);
-user.newProject(examplePro);
+if (localStorage.length != 0) {
+  Loader(user, Project, Todo)
+} else {
+  const examplePro = Project('Example Project', 'My reoccurring goal to get in a healthy amount of body movement and exertion.', 0)
+  const exampleTodo = Todo('Walk Dog', 'Make sure to take the tennis ball and leash', '', 3, 0)
+
+  examplePro.newTodo(exampleTodo);
+  user.newProject(examplePro);
+}
+
 user.domPrinter();
 
 ProjectFormEvents();

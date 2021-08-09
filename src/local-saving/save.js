@@ -21,8 +21,8 @@ export default function(user) {
         localStorage.setItem(`p${i}t${ii}Priority`, String(todo['priority']))
         localStorage.setItem(`p${i}t${ii}Marker`, String(todo['marker']))
         localStorage.setItem(`p${i}t${ii}Complete`, todo['complete'])
-        
-        localStorage.setItem(`p${i+1}TodoCounter`, ii+1)
+
+        localStorage.setItem(`p${i}TodoCounter`, ii+1)
       })
     }
   })

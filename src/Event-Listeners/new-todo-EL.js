@@ -23,7 +23,7 @@ export default function(user, todo, todoDomBuilder, todoDelBtnGen, showProDesELG
     ulTodoDelBtnS = document.getElementById(`todos-${projectNo}`).querySelectorAll('.todo-del')
     hidTodoDesS = document.getElementById(`todos-${projectNo}`).querySelectorAll('.todo-hide-btn');
     
-    todoDelBtnGen(user, todoDomBuilder, ulTodoDelBtnS);
+    todoDelBtnGen(user, todoDomBuilder, ulTodoDelBtnS, Save);
     showProDesELGen(user, hidTodoDesS)
 
     priorityText[0].innerHTML = ''
@@ -32,6 +32,6 @@ export default function(user, todo, todoDomBuilder, todoDelBtnGen, showProDesELG
     Save(user);
   })
 
-  todoDelBtnGen(user, todoDomBuilder, ulTodoDelBtnS);
+  todoDelBtnGen(user, todoDomBuilder, ulTodoDelBtnS, Save);
   showProDesELGen(user, hidTodoDesS)
 }
