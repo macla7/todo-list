@@ -7,6 +7,7 @@ export default function(user, projectNo) {
   project.state['todos'].forEach((todo) => {
     const todoLi = document.createElement('li')
     const todoTitCont = document.createElement('section');
+    const todoDesHid = document.createElement('button');
     const todoTit = document.createElement('h3')
     const todoActions = document.createElement('div')
     const compForm = document.createElement('form')
@@ -18,11 +19,13 @@ export default function(user, projectNo) {
     compInput.setAttribute('type', 'checkbox')
     compInput.setAttribute('value', 'completed')
     todoTitCont.classList.add('todo-tit-cont')
+    todoDesHid.classList.add('todo-btns')
     todoActions.classList.add('todo-actions')
     compForm.classList.add('todo-btns')
     priorityFlag.classList.add('todo-btns')
     deleteBtn.classList.add('todo-btns', 'todo-del', `${todo['marker']}`);
 
+    todoDesHid.innerHTML = '⇩';
     todoTit.innerHTML = todo['title'];
     todoDes.innerHTML = todo['description'];
     priorityFlag.innerHTML = `${todo['priority']}⚑`
@@ -30,6 +33,7 @@ export default function(user, projectNo) {
 
     ul.appendChild(todoLi);
     todoLi.appendChild(todoTitCont);
+    todoTitCont.appendChild(todoDesHid);
     todoTitCont.appendChild(todoTit);
     todoTitCont.appendChild(todoActions);
     todoActions.appendChild(compForm);

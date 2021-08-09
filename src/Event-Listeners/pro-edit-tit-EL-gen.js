@@ -1,7 +1,7 @@
 export default function(user, ediProTitS) {
   if (ediProTitS != undefined) {
     ediProTitS.forEach((btn, i) => {
-      let title = btn.parentElement.firstChild;
+      let title = btn.parentElement.children[1];
 
       title.addEventListener('focusout', (e) => {
         title.contentEditable = 'false'

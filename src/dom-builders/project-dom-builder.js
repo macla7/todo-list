@@ -2,10 +2,10 @@ export default function(title, description, ii) {
   const main = document.getElementsByTagName('main')[0];
 
   const proSec = document.createElement('section');
+  const proDesHidBtn = document.createElement('button')
   const proSecTit = document.createElement('section');
   const proTit = document.createElement('h2');
   const proDesEdiBtn = document.createElement('button')
-  const proDesHidBtn = document.createElement('button')
   const proDesCont = document.createElement('div');
   const proDes = document.createElement('p');
   const todSec = document.createElement('section');
@@ -17,9 +17,9 @@ export default function(title, description, ii) {
   
   proSec.classList.add('project', `pro-${ii}`);
   proSecTit.classList.add('project-title-area');
+  proDesHidBtn.classList.add('hide-button', 'project-btns')
   proTit.classList.add('project-title');
   proDesEdiBtn.classList.add('edit-button', 'project-btns');
-  proDesHidBtn.classList.add('hide-button', 'project-btns')
   proDesCont.classList.add('project-des');
   todSec.classList.add('project-todos');
   todList.setAttribute('id', `todos-${ii}`);
@@ -27,10 +27,10 @@ export default function(title, description, ii) {
 
   main.appendChild(proSec);
   proSec.appendChild(proSecTit);
+  proSecTit.appendChild(proDesHidBtn);
   proSecTit.appendChild(proTit);
   proSecTit.appendChild(proDesEdiBtn);
-  proSecTit.appendChild(proDesHidBtn);
-  proSecTit.appendChild(proDesCont);
+  proSec.appendChild(proDesCont);
   proDesCont.appendChild(proDes);
   proSec.appendChild(todSec);
   todSec.appendChild(todList);

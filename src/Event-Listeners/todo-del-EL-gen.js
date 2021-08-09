@@ -5,7 +5,7 @@ export default function(user, todoDomBuilder, todoDelBtnS) {
       btn.addEventListener('click', (e) => {
         console.log('jek')
         console.log(btn)
-        console.log(btn.parentElement.parentElement.parentElement.parentElement)
+        console.log(btn.parentElement.parentElement.parentElement)
         console.log(user.state);
         let ulId = btn.parentElement.parentElement.parentElement.parentElement.id
         let projectNo = ulId[ulId.length-1]

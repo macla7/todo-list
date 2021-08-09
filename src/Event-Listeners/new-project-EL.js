@@ -36,5 +36,4 @@ export default function(user, project, editProTitELGen, showProDesELGen, todoEL,
   editProTitELGen(user, ediProTitS);
   showProDesELGen(user, hidProDesS);
   todoEL(user, addTodoBtnS);
-  todoDelELGen(user, todoDomBuilder, todoDelBtnS);
 }

@@ -44,6 +44,10 @@
   background-color: inherit;
   aspect-ratio: 1;
   color: white;
+  margin: 0;
+
+  width: 1.8rem;
+  font-size: 1rem;
 
   // for Development
   // background-color: rgba(255, 255, 255, 0.1);
@@ -51,17 +55,15 @@
 
 .project-btns {
   @include secondary-btns;
-  font-size: 1.5rem;
-  width: 2.5rem;
 }
 
 .todo-btns {
   @include secondary-btns;
-  font-size: 1rem;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 2rem;
+
 
   input {
     height: 1.1rem;
@@ -69,8 +71,7 @@
   }
 }
 
-.hide-button {
-  font-size: 1.1rem;
+.edit-button {
+  font-size: 1.2rem;
 }
-
 

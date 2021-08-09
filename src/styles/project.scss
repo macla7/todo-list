@@ -5,3 +5,12 @@
 .project-des-show {
   display: block;
 }
+
+.project-title-area {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+
+  > * {
+
+  }
+}
