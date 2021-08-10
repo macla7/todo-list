@@ -31,7 +31,7 @@ export default function(user, Project, Todo) {
       tMarker = localStorage.getItem(`p${i}t${j}Marker`)
       tComplete = localStorage.getItem(`p${i}t${j}Complete`)
 
-      project.newTodo(Todo(tTitle, tDescription, tPriority, tMarker, tComplete))
+      project.newTodo(Todo(tTitle, tDescription, tDueDate, tPriority, tMarker, tComplete))
     }
   }
 }

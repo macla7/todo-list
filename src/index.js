@@ -9,6 +9,7 @@ import NewTodo from './Event-Listeners/new-todo-EL';
 import TodoProELGen from './Event-Listeners/pro-todo-EL-gen';
 import EditProTitELGen from './Event-Listeners/pro-edit-tit-EL-gen';
 import ShowProDesELGen from './Event-Listeners/pro-show-des-EL-gen';
+import ProjectDelELGen from './Event-Listeners/pro-del-EL-gen';
 import TodoDelELGen from './Event-Listeners/todo-del-EL-gen';
 import ProjectDomBuilder from './dom-builders/project-dom-builder'
 import TodoDomBuilder from './dom-builders/todo-dom-builder';
@@ -18,6 +19,7 @@ import './style.scss';
 
 const user = User(TodoDomBuilder, ProjectDomBuilder);
 
+console.log(localStorage)
 if (localStorage.length != 0) {
   Loader(user, Project, Todo)
 } else {
@@ -29,11 +31,12 @@ if (localStorage.length != 0) {
 }
 
 user.domPrinter();
+console.log(user.state)
 
 ProjectFormEvents();
 TodoFormEvents();
 FormRangeEvents();
-NewProject(user, Project, EditProTitELGen, ShowProDesELGen, TodoProELGen,  TodoDomBuilder, TodoDelELGen, Save);
+NewProject(user, Project, EditProTitELGen, ShowProDesELGen, TodoProELGen,  TodoDomBuilder, TodoDelELGen, ProjectDelELGen, Save);
 NewTodo(user, Todo, TodoDomBuilder, TodoDelELGen, ShowProDesELGen, Save);
 
 

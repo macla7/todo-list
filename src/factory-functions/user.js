@@ -21,8 +21,10 @@ export default function(todoDomBuilder, projectDomBuilder) {
     let project;
     for (let ii = 0; ii < state['projects'].length; ii++) {
       project = state['projects'][ii]['state']
+      project['projectMarker'] = ii
       projectDomBuilder(project['title'], project['description'], ii);
       todoDomBuilder({state}, ii);
+      state.projectMarker = ii + 1
     }
   }
 

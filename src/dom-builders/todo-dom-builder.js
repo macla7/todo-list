@@ -3,10 +3,10 @@ export default function(user, projectNo) {
   let project = user.state['projects'][projectNo]
 
   ul.innerHTML = '';
-
   project.state['todos'].forEach((todo) => {
     const todoLi = document.createElement('li')
     const todoTitCont = document.createElement('section');
+    const todoDesHidCont = document.createElement('div');
     const todoDesHid = document.createElement('button');
     const todoTit = document.createElement('h3')
     const todoActions = document.createElement('div')
@@ -34,7 +34,8 @@ export default function(user, projectNo) {
 
     ul.appendChild(todoLi);
     todoLi.appendChild(todoTitCont);
-    todoTitCont.appendChild(todoDesHid);
+    todoTitCont.appendChild(todoDesHidCont);
+    todoDesHidCont.appendChild(todoDesHid);
     todoTitCont.appendChild(todoTit);
     todoTitCont.appendChild(todoActions);
     todoActions.appendChild(compForm);

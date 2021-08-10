@@ -1,7 +1,5 @@
 export default function(user) {
 
-  console.log(user)
-
   localStorage.clear();
 
   user.state['projects'].forEach((pro, i) => {
@@ -14,7 +12,6 @@ export default function(user) {
 
     if (pro.state['todos'] != []) {
       pro.state['todos'].forEach((todo, ii) => {
-        console.log(todo)
         localStorage.setItem(`p${i}t${ii}Title`, todo['title'])
         localStorage.setItem(`p${i}t${ii}Description`, todo['description'])
         localStorage.setItem(`p${i}t${ii}DueDate`, todo['dueDate'])
