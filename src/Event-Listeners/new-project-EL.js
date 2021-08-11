@@ -13,7 +13,7 @@ export default function(user, project, editProTitELGen, showProDesELGen, todoEL,
     let title = document.getElementById('project-title').value
     let description = document.getElementById('project-description').value
 
-    user.newProject(project(title, description, user.state['projectMarker']))
+    user.newProject(project(title, description))
     // user.printProject();
     user.domPrinter();
 

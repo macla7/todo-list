@@ -8,7 +8,7 @@ Content Editable: My assumption, without looking it up too much, is that there i
 
 Few more things to do:
   - Make hide todo EL DONE
-  - Make complete todo EL 
+  - Make complete todo EL DONE
   - Delete project button DONE
   - Get Rid of Priority on Projects DONE
   - Configure local save DONE

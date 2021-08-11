@@ -18,22 +18,29 @@ import Save from './local-saving/save';
 import Loader from './local-saving/load';
 import './style.scss';
 
+// Create the new user.
 const user = User(TodoDomBuilder, ProjectDomBuilder);
 
 console.log(localStorage)
+
+// If theres a locally stored user, import their projects
+// and todos, else create examples
 if (localStorage.length != 0) {
   Loader(user, Project, Todo)
 } else {
-  const examplePro = Project('Example Project', 'My reoccurring goal to get in a healthy amount of body movement and exertion.', 0)
-  const exampleTodo = Todo('Walk Dog', 'Make sure to take the tennis ball and leash', '', 3, 0)
+  const examplePro = Project('Example Project', 'My reoccurring goal to get in a healthy amount of body movement and exertion.')
+  const exampleTodo = Todo('Walk Dog', 'Make sure to take the tennis ball and leash', '', 3)
 
   examplePro.newTodo(exampleTodo);
   user.newProject(examplePro);
 }
 
+// Print to dom
 user.domPrinter();
-console.log(user.state['projects'][0].state)
 
+// Set Event Listeners for forms, then all the other EL's
+// are set whenever a new project or todo is made, so they're
+// passed into NewProject and NewTodo.
 ProjectFormEvents();
 TodoFormEvents();
 FormRangeEvents();

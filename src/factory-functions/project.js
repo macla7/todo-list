@@ -1,15 +1,13 @@
-export default function(title, description, projectMarker, todoMarker = 0) {
+export default function(title, description) {
   let state = {
     title,
     description,
-    projectMarker,
-    todoMarker,
+    projectMarker: '',
     todos: []
   }
 
   const newTodo = p => {
     state.todos.push(p);
-    state.todoMarker++;
   }
 
   const domPrinter = (ulId) => {

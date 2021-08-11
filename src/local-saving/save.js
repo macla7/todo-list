@@ -6,7 +6,6 @@ export default function(user) {
     localStorage.setItem(`p${i}Name`, pro.state['title'] )
     localStorage.setItem(`p${i}Description`, pro.state['description'] )
     localStorage.setItem(`p${i}Marker`, String(pro.state['projectMarker']) )
-    localStorage.setItem(`p${i}TodoMarker`, String(pro.state['todoMarker']) )
 
     localStorage.setItem('projectCounter', String(i+1))
 
@@ -16,7 +15,6 @@ export default function(user) {
         localStorage.setItem(`p${i}t${ii}Description`, todo['description'])
         localStorage.setItem(`p${i}t${ii}DueDate`, todo['dueDate'])
         localStorage.setItem(`p${i}t${ii}Priority`, String(todo['priority']))
-        // localStorage.setItem(`p${i}t${ii}Marker`, String(todo['marker']))
         localStorage.setItem(`p${i}t${ii}Complete`, String(todo['complete']))
 
         localStorage.setItem(`p${i}TodoCounter`, ii+1)

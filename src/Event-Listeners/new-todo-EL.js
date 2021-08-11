@@ -15,7 +15,6 @@ export default function(user, todo, todoDomBuilder, todoDelBtnGen, showProDesELG
     let projectNo = form.parentElement.classList[2]
 
     let project = user.state['projects'][projectNo]
-    // let todoMarker = project.state['todoMarker'];
 
     project.newTodo(todo(title, description, dueDate, priority))
     
