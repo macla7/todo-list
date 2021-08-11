@@ -1,11 +1,10 @@
-export default function(title, description, dueDate, priority, marker, complete = false) {
+export default function(title, description, dueDate, priority, complete = 'false') {
   let state = {
     title,
     description,
     dueDate,
     priority,
-    marker,
-    complete
+    complete,
   }
   return Object.assign(
     {},

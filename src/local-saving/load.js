@@ -28,10 +28,10 @@ export default function(user, Project, Todo) {
       tDescription = localStorage.getItem(`p${i}t${j}Description`)
       tDueDate = localStorage.getItem(`p${i}t${j}DueDate`)
       tPriority = localStorage.getItem(`p${i}t${j}Priority`)
-      tMarker = localStorage.getItem(`p${i}t${j}Marker`)
+      // tMarker = localStorage.getItem(`p${i}t${j}Marker`)
       tComplete = localStorage.getItem(`p${i}t${j}Complete`)
 
-      project.newTodo(Todo(tTitle, tDescription, tDueDate, tPriority, tMarker, tComplete))
+      project.newTodo(Todo(tTitle, tDescription, tDueDate, tPriority, tComplete))
     }
   }
 }

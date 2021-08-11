@@ -3,7 +3,8 @@ export default function(user, projectNo) {
   let project = user.state['projects'][projectNo]
 
   ul.innerHTML = '';
-  project.state['todos'].forEach((todo) => {
+  project.state['todos'].forEach((todo, i) => {
+    todo['marker'] = i
     const todoLi = document.createElement('li')
     const todoTitCont = document.createElement('section');
     const todoDesHidCont = document.createElement('div');
@@ -22,8 +23,9 @@ export default function(user, projectNo) {
     todoDesHid.classList.add('todo-btns', 'todo-hide-btn')
     todoActions.classList.add('todo-actions')
     compForm.classList.add('todo-btns')
+    compInput.classList.add('comp-btns', `${i}`)
     priorityFlag.classList.add('todo-btns')
-    deleteBtn.classList.add('todo-btns', 'todo-del', `${todo['marker']}`);
+    deleteBtn.classList.add('todo-btns', 'todo-del', `${i}`);
     todoDes.classList.add('des');
 
     todoDesHid.innerHTML = '⇩';
@@ -31,6 +33,10 @@ export default function(user, projectNo) {
     todoDes.innerHTML = todo['description'];
     priorityFlag.innerHTML = `${todo['priority']}⚑`
     deleteBtn.innerHTML = '🗑'
+    if (todo['complete'] == 'true' ) { 
+      compInput.checked = true
+     }
+
 
     ul.appendChild(todoLi);
     todoLi.appendChild(todoTitCont);
@@ -43,6 +49,7 @@ export default function(user, projectNo) {
     todoActions.appendChild(priorityFlag);
     todoActions.appendChild(deleteBtn);
     todoLi.appendChild(todoDes);
+    
     
   })
 

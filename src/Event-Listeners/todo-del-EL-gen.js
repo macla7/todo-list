@@ -1,7 +1,7 @@
 export default function delTodoGen(user, todoDomBuilder, todoDelBtnS, Save) {
   if ( todoDelBtnS != undefined ) {
 
-    todoDelBtnS.forEach((btn) => {
+    todoDelBtnS.forEach((btn, i) => {
       btn.addEventListener('click', (e) => {
 
         let ulId = btn.parentElement.parentElement.parentElement.parentElement.id
@@ -16,7 +16,7 @@ export default function delTodoGen(user, todoDomBuilder, todoDelBtnS, Save) {
 
         todoDomBuilder(user, projectNo);
         let ulTodoDelBtnS = document.getElementById(`todos-${projectNo}`).querySelectorAll('.todo-del')
-        
+
         Save(user);
         delTodoGen(user, todoDomBuilder, ulTodoDelBtnS, Save);
       })

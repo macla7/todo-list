@@ -11,6 +11,7 @@ import EditProTitELGen from './Event-Listeners/pro-edit-tit-EL-gen';
 import ShowProDesELGen from './Event-Listeners/pro-show-des-EL-gen';
 import ProjectDelELGen from './Event-Listeners/pro-del-EL-gen';
 import TodoDelELGen from './Event-Listeners/todo-del-EL-gen';
+import TodoCompELGen from './Event-Listeners/todo-comp-EL-gen';
 import ProjectDomBuilder from './dom-builders/project-dom-builder'
 import TodoDomBuilder from './dom-builders/todo-dom-builder';
 import Save from './local-saving/save';
@@ -31,12 +32,12 @@ if (localStorage.length != 0) {
 }
 
 user.domPrinter();
-console.log(user.state)
+console.log(user.state['projects'][0].state)
 
 ProjectFormEvents();
 TodoFormEvents();
 FormRangeEvents();
 NewProject(user, Project, EditProTitELGen, ShowProDesELGen, TodoProELGen,  TodoDomBuilder, TodoDelELGen, ProjectDelELGen, Save);
-NewTodo(user, Todo, TodoDomBuilder, TodoDelELGen, ShowProDesELGen, Save);
+NewTodo(user, Todo, TodoDomBuilder, TodoDelELGen, ShowProDesELGen, TodoCompELGen, Save);
 
 
