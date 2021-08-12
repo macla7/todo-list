@@ -11,11 +11,10 @@ export default function(title, description, ii) {
   const proDesCont = document.createElement('div');
   const proDes = document.createElement('p');
   const todSec = document.createElement('section');
-  const todList = document.createElement('ul')
-  const todAddBtn = document.createElement('button')
+  const todList = document.createElement('ul');
+  const todAddBtnSpan = document.createElement('span');
+  const todAddBtn = document.createElement('button');
 
-  // const todFormCont = document.createElement('section')
-  // const todForm = document.createElement('form')
   
   proSec.classList.add('project', `pro-${ii}`);
   proSecTit.classList.add('project-title-area');
@@ -40,12 +39,13 @@ export default function(title, description, ii) {
   proSec.appendChild(todSec);
   todSec.appendChild(todList);
   todSec.appendChild(todAddBtn);
+  todAddBtn.appendChild(todAddBtnSpan)
 
   proTit.innerHTML = title;
   proDes.innerHTML = description;
   proDesEdiBtn.innerHTML = '&#9998;';
   deleteBtn.innerHTML = '🗑'
   proDesHidBtn.innerHTML = '⇩';
-  todAddBtn.innerHTML = 'Add Task'
+  todAddBtnSpan.innerHTML = 'Add Task'
 
 }

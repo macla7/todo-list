@@ -28,11 +28,12 @@ export default function(user, projectNo, todoDate) {
     priorityFlag.classList.add('todo-btns')
     deleteBtn.classList.add('todo-btns', 'todo-del', `${i}`);
     todoDes.classList.add('des');
+    todoDueDate.classList.add('due-date')
 
     todoDesHid.innerHTML = '⇩';
     todoTit.innerHTML = todo['title'];
     todoDes.innerHTML = todo['description'];
-    todoDueDate.innerHTML = todoDate(todo['dueDate']);
+    todoDueDate.innerHTML = todoDate(todo['dueDate'], todoDueDate);
 
     priorityFlag.innerHTML = `${todo['priority']}⚑`
     deleteBtn.innerHTML = '🗑'
@@ -46,12 +47,12 @@ export default function(user, projectNo, todoDate) {
     todoTitCont.appendChild(todoDesHidCont);
     todoDesHidCont.appendChild(todoDesHid);
     todoTitCont.appendChild(todoTit);
-    todoTitCont.appendChild(todoDueDate);
     todoTitCont.appendChild(todoActions);
     todoActions.appendChild(compForm);
     compForm.appendChild(compInput);
     todoActions.appendChild(priorityFlag);
     todoActions.appendChild(deleteBtn);
+    todoTitCont.appendChild(todoDueDate);
     todoLi.appendChild(todoDes);
     
     

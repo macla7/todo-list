@@ -18,7 +18,7 @@ export default function delTodoGen(user, todoDomBuilder, todoDelBtnS, Save, todo
         let ulTodoDelBtnS = document.getElementById(`todos-${projectNo}`).querySelectorAll('.todo-del')
 
         Save(user);
-        delTodoGen(user, todoDomBuilder, ulTodoDelBtnS, Save);
+        delTodoGen(user, todoDomBuilder, ulTodoDelBtnS, Save, todoDate);
       })
     })
   }

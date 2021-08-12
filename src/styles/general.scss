@@ -1,5 +1,5 @@
 html {
-  font-size: 10px;
+  font-size: 14px;
 }
 
 body {
@@ -13,6 +13,7 @@ body {
     background-color: rgba(1, 82, 55, 0.454);
     border-radius: 2rem;
     margin: 0.5rem 0;
+    font-size: 1.5rem;
   }
 
   header {
@@ -23,10 +24,14 @@ body {
   h2 {
     display: inline;
     margin: 0;
+    font-size: 1.3rem;
   }
 
   li {
     list-style: none;
+    border: 0.5px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    margin: 0.5rem;
   }
 
   ul {
@@ -46,6 +51,6 @@ main {
 }
 
 .des {
-  padding-left: 0.5rem;
+  padding-left: 1.5rem;
 }
 
