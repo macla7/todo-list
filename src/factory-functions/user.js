@@ -1,4 +1,4 @@
-export default function(todoDomBuilder, projectDomBuilder) {
+export default function(todoDomBuilder, projectDomBuilder, todoDate) {
   let state = {
     projects: []
   }
@@ -21,7 +21,7 @@ export default function(todoDomBuilder, projectDomBuilder) {
       project = state['projects'][ii]['state']
       project['projectMarker'] = ii
       projectDomBuilder(project['title'], project['description'], ii);
-      todoDomBuilder({state}, ii);
+      todoDomBuilder({state}, ii, todoDate);
     }
   }
 

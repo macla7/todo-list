@@ -16,10 +16,12 @@ import ProjectDomBuilder from './dom-builders/project-dom-builder'
 import TodoDomBuilder from './dom-builders/todo-dom-builder';
 import Save from './local-saving/save';
 import Loader from './local-saving/load';
+import TodoDate from './misc/todo-date.js';
+import { parseISO, format, formatDistance, isBefore } from 'date-fns'
 import './style.scss';
 
-// Create the new user.
-const user = User(TodoDomBuilder, ProjectDomBuilder);
+// Create the new user
+const user = User(TodoDomBuilder, ProjectDomBuilder, TodoDate(parseISO, format, formatDistance, isBefore));
 
 console.log(localStorage)
 
@@ -44,7 +46,7 @@ user.domPrinter();
 ProjectFormEvents();
 TodoFormEvents();
 FormRangeEvents();
-NewProject(user, Project, EditProTitELGen, ShowProDesELGen, TodoProELGen,  TodoDomBuilder, TodoDelELGen, ProjectDelELGen, Save);
-NewTodo(user, Todo, TodoDomBuilder, TodoDelELGen, ShowProDesELGen, TodoCompELGen, Save);
+NewProject(user, Project, EditProTitELGen, ShowProDesELGen, TodoProELGen,  TodoDomBuilder, TodoDelELGen, ProjectDelELGen, Save, TodoDate(parseISO, format, formatDistance, isBefore));
+NewTodo(user, Todo, TodoDomBuilder, TodoDelELGen, ShowProDesELGen, TodoCompELGen, Save, TodoDate(parseISO, format, formatDistance, isBefore));
 
 

@@ -1,4 +1,4 @@
-export default function(user, todo, todoDomBuilder, todoDelBtnGen, showProDesELGen, todoCompELGen, Save) {
+export default function(user, todo, todoDomBuilder, todoDelBtnGen, showProDesELGen, todoCompELGen, Save, todoDate) {
   const form = document.getElementById('todo-form')
   const priorityText = document.querySelectorAll('.priority-text')
   let ulTodoDelBtnS = document.querySelectorAll('.todo-del');
@@ -18,13 +18,13 @@ export default function(user, todo, todoDomBuilder, todoDelBtnGen, showProDesELG
 
     project.newTodo(todo(title, description, dueDate, priority))
     
-    todoDomBuilder(user, projectNo);
+    todoDomBuilder(user, projectNo, todoDate);
 
     ulTodoDelBtnS = document.getElementById(`todos-${projectNo}`).querySelectorAll('.todo-del');
     hidTodoDesS = document.getElementById(`todos-${projectNo}`).querySelectorAll('.todo-hide-btn');
     todoCompBtnS = document.getElementById(`todos-${projectNo}`).querySelectorAll('.comp-btns');
     
-    todoDelBtnGen(user, todoDomBuilder, ulTodoDelBtnS, Save);
+    todoDelBtnGen(user, todoDomBuilder, ulTodoDelBtnS, Save, todoDate);
     showProDesELGen(user, hidTodoDesS)
     todoCompELGen(user, todoCompBtnS, Save)
 
@@ -34,7 +34,7 @@ export default function(user, todo, todoDomBuilder, todoDelBtnGen, showProDesELG
     Save(user);
   })
 
-  todoDelBtnGen(user, todoDomBuilder, ulTodoDelBtnS, Save);
+  todoDelBtnGen(user, todoDomBuilder, ulTodoDelBtnS, Save, todoDate);
   showProDesELGen(user, hidTodoDesS)
   todoCompELGen(user, todoCompBtnS, Save)
 }

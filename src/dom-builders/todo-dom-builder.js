@@ -1,4 +1,4 @@
-export default function(user, projectNo) {
+export default function(user, projectNo, todoDate) {
   let ul = document.getElementById(`todos-${projectNo}`)
   let project = user.state['projects'][projectNo]
 
@@ -10,6 +10,7 @@ export default function(user, projectNo) {
     const todoDesHidCont = document.createElement('div');
     const todoDesHid = document.createElement('button');
     const todoTit = document.createElement('h3')
+    const todoDueDate = document.createElement('p')
     const todoActions = document.createElement('div')
     const compForm = document.createElement('form')
     const compInput = document.createElement('input')
@@ -31,6 +32,8 @@ export default function(user, projectNo) {
     todoDesHid.innerHTML = '⇩';
     todoTit.innerHTML = todo['title'];
     todoDes.innerHTML = todo['description'];
+    todoDueDate.innerHTML = todoDate(todo['dueDate']);
+
     priorityFlag.innerHTML = `${todo['priority']}⚑`
     deleteBtn.innerHTML = '🗑'
     if (todo['complete'] == 'true' ) { 
@@ -43,6 +46,7 @@ export default function(user, projectNo) {
     todoTitCont.appendChild(todoDesHidCont);
     todoDesHidCont.appendChild(todoDesHid);
     todoTitCont.appendChild(todoTit);
+    todoTitCont.appendChild(todoDueDate);
     todoTitCont.appendChild(todoActions);
     todoActions.appendChild(compForm);
     compForm.appendChild(compInput);

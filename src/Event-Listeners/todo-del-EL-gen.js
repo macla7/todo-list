@@ -1,4 +1,4 @@
-export default function delTodoGen(user, todoDomBuilder, todoDelBtnS, Save) {
+export default function delTodoGen(user, todoDomBuilder, todoDelBtnS, Save, todoDate) {
   if ( todoDelBtnS != undefined ) {
 
     todoDelBtnS.forEach((btn, i) => {
@@ -14,7 +14,7 @@ export default function delTodoGen(user, todoDomBuilder, todoDelBtnS, Save) {
         user.state['projects'][projectNo].state['todos'] = element;
 
 
-        todoDomBuilder(user, projectNo);
+        todoDomBuilder(user, projectNo, todoDate);
         let ulTodoDelBtnS = document.getElementById(`todos-${projectNo}`).querySelectorAll('.todo-del')
 
         Save(user);

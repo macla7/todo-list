@@ -1,4 +1,4 @@
-export default function(user, project, editProTitELGen, showProDesELGen, todoEL, todoDomBuilder, todoDelELGen, projectDelELGen, Save) {
+export default function(user, project, editProTitELGen, showProDesELGen, todoEL, todoDomBuilder, todoDelELGen, projectDelELGen, Save, todoDate) {
   const form = document.getElementById('project-form')
   let ediProTitS = document.querySelectorAll('.edit-button')
   let hidProDesS = document.querySelectorAll('.hide-button')
@@ -27,7 +27,7 @@ export default function(user, project, editProTitELGen, showProDesELGen, todoEL,
     showProDesELGen(user, hidProDesS);
     todoEL(user, addTodoBtnS);
     projectDelELGen(user, projectDelBtnS, Save);
-    todoDelELGen(user, todoDomBuilder, todoDelBtnS, Save);
+    todoDelELGen(user, todoDomBuilder, todoDelBtnS, Save, todoDate);
 
     form.reset();
 
